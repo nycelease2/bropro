@@ -7,7 +7,7 @@ CREATE TABLE user(
 	/*1=todo,2=sent,3=received*/
 	order_status INTEGER,
 	created_at INTEGER,
-	updated_at TIMESTAMP DEFAULT NOW
+	updated_at TIMESTAMP DEFAULT
 );
 
 CREATE TABLE onSale(

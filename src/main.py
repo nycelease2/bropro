@@ -22,7 +22,7 @@ if choice == "1":
     script1 = ("INSERT INTO user(name,email,mobile_number) VALUES('")
     variablescript = (name,"'","'",email,"'","'",mob_num,"'", ');')
 
-    con.execute(script1,variablescript)
+    con.execute("INSERT INTO user(name,email,mobile_number) VALUES('Raaghav', 'nycelease@gmail.com', '9909909901')")
     
     con.commit()
     con.close()
