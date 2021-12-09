@@ -1,29 +1,40 @@
 import sqlite3
 import sys
 
-con = sqlite3.connect('DataBase.db')
-cur = con.cursor()
+running = True
+conn = sqlite3.connect('DataBase.db')
+c = conn.cursor()
+while running == True:
+    print(' [1] add customer')
+    print(' [2] add stock')
+    print(' [3] add order')
+    print(' [4] print orders')
+    print(' [5] exit')
 
-print(' [1] add customer')
-print(' [2] add stock')
-print(' [3] add order')
-print(' [4] print orders')
+    choice = input(': ')
 
-choice = input(': ')
+    if choice == "1":
+        print('Name of customer*')
+        name = input(': ')
+        print('Email')
+        email = input(': ')
+        print('Mobile Number*')
+        mob_num = input(': ')
 
-if choice == "1":
-    print('Name of customer*')
-    name = input(': ')
-    print('Email')
-    email = input(': ')
-    print('Mobile Number*')
-    mob_num = input(': ')
-
-    script1 = ("INSERT INTO user(name,email,mobile_number) VALUES('")
-    variablescript = (name,"'","'",email,"'","'",mob_num,"'", ');')
-
-    con.execute("INSERT INTO user(name,email,mobile_number) VALUES('Raaghav', 'nycelease@gmail.com', '9909909901')")
+        if email != None:
+            c.execute("INSERT INTO user(name, mobile_number, email) VALUES(?,?,?)",(name,mob_num,email))
     
-    con.commit()
-    con.close()
-    sys.exit()
+        conn.commit()
+
+    if choice == 3:
+        print('name of person')
+        nameOfperson=input(": ")
+        
+        print('item')
+        orderOfperson=input(": ")
+
+
+    if choice == 5:
+        conn.commit()
+        conn.close()
+        sys.exit
