@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS user(
 	location TEXT,
 	/*1=todo,2=sent,3=received*/
 	order_status INTEGER,
+	orders CHAR,
 	created_at INTEGER,
 	updated_at INTEGER
 );
